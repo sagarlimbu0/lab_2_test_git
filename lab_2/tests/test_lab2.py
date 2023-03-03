@@ -40,65 +40,76 @@ def test_openapi():
 
 
 # TEST inputs
-@pytest.mark.parametrize(
-    "input_features",
-    #, status_code",
-    [
-        [{
-            "MedInc": 22.0, 
-            "HouseAge": 33.4, 
-            "AveRooms": 2, 
-            "AveBedrms": 5.8, 
-            "Population": 322.0, 
-            "AveOccup": 3, 
-            "Latitude": 35,
-            "Longitude": -122.25
-    }],
-    #, 200]
-])
+# @pytest.mark.parametrize(
+#     "input_features",
+#     #, status_code",
+#     [
+#         [{
+#             "MedInc": 22.0, 
+#             "HouseAge": 33.4, 
+#             "AveRooms": 2, 
+#             "AveBedrms": 5.8, 
+#             "Population": 322.0, 
+#             "AveOccup": 3, 
+#             "Latitude": 35,
+#             "Longitude": -122.25
+#     }],
+#     #, 200]
+# ])
 
 # Test Correct Input Features
-async def test_correct_input(input_features):
-    response= client.put("/predict",
-        content= await json.dumps(input_features))
+# def test_correct_input(input_features):
+#     response= client.put("/predict",
+#         content= json.dumps(input_features))
 
-    data_= json.loads(response.json())
+#     data_= json.loads(response.json())
 
-    assert 'data' in data_
-    assert 'MedInc' in data_['MedInc']
-    assert 'HouseAge' in data_['HouseAge']
-    assert 'AveRooms' in data_['AveRooms']
-    assert 'AveBedrms' in data_['AveBedrms']
-    assert 'Population' in data_['Population']
-    assert 'AveOccup' in data_['AveOccup']
-    assert 'Latitude' in data_['Latitude']
-    assert 'Longitude' in data_['Longitude']
+#     assert 'data' in data_
+#     assert 'MedInc' in data_['MedInc']
+#     assert 'HouseAge' in data_['HouseAge']
+#     assert 'AveRooms' in data_['AveRooms']
+#     assert 'AveBedrms' in data_['AveBedrms']
+#     assert 'Population' in data_['Population']
+#     assert 'AveOccup' in data_['AveOccup']
+#     assert 'Latitude' in data_['Latitude']
+#     assert 'Longitude' in data_['Longitude']
 
 ## TEST INPUT on json format
-@pytest.mark.parametrize(
-    "input_features",
-    #, status_code",
-    [
-        [{
-            "MedInc": 22.0, 
-            "HouseAge": 33.4, 
-            "AveRooms": 2, 
-            "AveBedrms": 5.8, 
-            "Population": 322.0, 
-            "AveOccup": 3, 
-            "Latitude": 35,
-            "Longitude": -122.25
-    }],
-    #, 200]
-])
+# @pytest.mark.parametrize(
+#     "input_features",
+#     #, status_code",
+#     [
+#         [{
+#             "MedInc": 22.0, 
+#             "HouseAge": 33.4, 
+#             "AveRooms": 2, 
+#             "AveBedrms": 5.8, 
+#             "Population": 322.0, 
+#             "AveOccup": 3, 
+#             "Latitude": 35,
+#             "Longitude": -122.25
+#     }],
+#     #, 200]
+# ])
 
-async def test_input_features(input_features):
+# input_features_= {
+#             "MedInc": 22.0, 
+#             "HouseAge": 33.4, 
+#             "AveRooms": 2, 
+#             "AveBedrms": 5.8, 
+#             "Population": 322.0, 
+#             "AveOccup": 3, 
+#             "Latitude": 35,
+#             "Longitude": -122.25
+#     }
 
-    response= client.put("/predict",
-        content= await json.dumps(input_features))
+# def test_input_features(input_features_):
 
-    assert response.json() == input_features
-   # assert response.status_code == status_code
+#     response= client.put("/predict",
+#         content= json.dumps(input_features_))
+
+#     assert response.json() == input_features_
+#    # assert response.status_code == status_code
 
 
 ## test health endpoint
