@@ -40,22 +40,22 @@ def test_openapi():
 
 
 # TEST inputs
-@pytest.mark.parametrize(
-    "input_features",
-    #, status_code",
-    [
-        [{
-            "MedInc": 22.0, 
-            "HouseAge": 33.4, 
-            "AveRooms": 2, 
-            "AveBedrms": 5.8, 
-            "Population": 322.0, 
-            "AveOccup": 3, 
-            "Latitude": 35,
-            "Longitude": -122.25
-    }],
-    #, 200]
-])
+# @pytest.mark.parametrize(
+#     "input_features",
+#     #, status_code",
+#     [
+#         [{
+#             "MedInc": 22.0, 
+#             "HouseAge": 33.4, 
+#             "AveRooms": 2, 
+#             "AveBedrms": 5.8, 
+#             "Population": 322.0, 
+#             "AveOccup": 3, 
+#             "Latitude": 35,
+#             "Longitude": -122.25
+#     }],
+#     #, 200]
+# ])
 
 # Test Correct Input Features
 # def test_correct_input(input_features):
